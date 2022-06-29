@@ -1,6 +1,6 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Traits;
+namespace Rcdelfin\Inventory\Traits;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 

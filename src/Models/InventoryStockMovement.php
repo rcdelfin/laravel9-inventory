@@ -1,10 +1,10 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Models;
+namespace Rcdelfin\Inventory\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Ronmrcdo\Inventory\Traits\HasItemMovements;
+use Rcdelfin\Inventory\Traits\HasItemMovements;
 
 class InventoryStockMovement extends Model
 {

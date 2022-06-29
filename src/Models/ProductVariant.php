@@ -1,6 +1,6 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Models;
+namespace Rcdelfin\Inventory\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -47,7 +47,7 @@ class ProductVariant extends Model
      */
     public function productSku(): BelongsTo
 	{
-		return $this->belongsTo('Ronmrcdo\Inventory\Models\ProductSku', 'product_sku_id');
+		return $this->belongsTo('Rcdelfin\Inventory\Models\ProductSku', 'product_sku_id');
 	}
     
     /**
@@ -67,7 +67,7 @@ class ProductVariant extends Model
      */
     public function attribute(): BelongsTo
     {
-        return $this->belongsTo('Ronmrcdo\Inventory\Models\Attribute', 'product_attribute_id');
+        return $this->belongsTo('Rcdelfin\Inventory\Models\Attribute', 'product_attribute_id');
     }
 
     /**
@@ -77,6 +77,6 @@ class ProductVariant extends Model
      */
     public function option(): BelongsTo
     {
-        return $this->belongsTo('Ronmrcdo\Inventory\Models\AttributeValue', 'product_attribute_value_id');
+        return $this->belongsTo('Rcdelfin\Inventory\Models\AttributeValue', 'product_attribute_value_id');
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Models;
+namespace Rcdelfin\Inventory\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Ronmrcdo\Inventory\Traits\Sluggable;
-use Ronmrcdo\Inventory\Traits\HasProducts;
+use Rcdelfin\Inventory\Traits\Sluggable;
+use Rcdelfin\Inventory\Traits\HasProducts;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 

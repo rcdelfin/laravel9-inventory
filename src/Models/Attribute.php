@@ -1,6 +1,6 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Models;
+namespace Rcdelfin\Inventory\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -86,6 +86,6 @@ class Attribute extends Model
      */
     public function values(): HasMany
     {
-        return $this->hasMany('Ronmrcdo\Inventory\Models\AttributeValue', 'product_attribute_id');
+        return $this->hasMany('Rcdelfin\Inventory\Models\AttributeValue', 'product_attribute_id');
     }
 }

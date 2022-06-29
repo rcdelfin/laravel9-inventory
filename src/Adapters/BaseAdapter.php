@@ -1,8 +1,8 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Adapters;
+namespace Rcdelfin\Inventory\Adapters;
 
-use Ronmrcdo\Inventory\Contracts\ResourceContract;
+use Rcdelfin\Inventory\Contracts\ResourceContract;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 abstract class BaseAdapter implements ResourceContract

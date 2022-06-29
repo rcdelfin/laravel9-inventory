@@ -1,12 +1,12 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Models;
+namespace Rcdelfin\Inventory\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Ronmrcdo\Inventory\Traits\HasItemStocks;
+use Rcdelfin\Inventory\Traits\HasItemStocks;
 
 class InventoryStock extends Model
 {
@@ -73,7 +73,7 @@ class InventoryStock extends Model
      */
     public function warehouse(): BelongsTo
     {
-        return $this->belongsTo('Ronmrcdo\Inventory\Models\Warehouse');
+        return $this->belongsTo('Rcdelfin\Inventory\Models\Warehouse');
     }
 
     /**
@@ -83,7 +83,7 @@ class InventoryStock extends Model
      */
     public function product(): BelongsTo
     {
-        return $this->belongsTo('Ronmrcdo\Inventory\Models\ProductSku' ,'product_sku_id');
+        return $this->belongsTo('Rcdelfin\Inventory\Models\ProductSku' ,'product_sku_id');
     }
 
     /**
@@ -93,6 +93,6 @@ class InventoryStock extends Model
      */
     public function movements(): HasMany
     {
-        return $this->hasMany('Ronmrcdo\Inventory\Models\InventoryStockMovement', 'stock_id', 'id');
+        return $this->hasMany('Rcdelfin\Inventory\Models\InventoryStockMovement', 'stock_id', 'id');
     }
 }

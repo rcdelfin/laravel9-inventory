@@ -1,9 +1,9 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Resources;
+namespace Rcdelfin\Inventory\Resources;
 
-use Ronmrcdo\Inventory\Resources\AttributeResource;
-use Ronmrcdo\Inventory\Resources\VariantResource;
+use Rcdelfin\Inventory\Resources\AttributeResource;
+use Rcdelfin\Inventory\Resources\VariantResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProductResource extends JsonResource

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Models;
+namespace Rcdelfin\Inventory\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -39,6 +39,6 @@ class Warehouse extends Model
      */
     public function items(): HasMany
     {
-        return $this->hasMany('Ronmrcdo\Inventory\Models\InventoryStock');
+        return $this->hasMany('Rcdelfin\Inventory\Models\InventoryStock');
     }
 }

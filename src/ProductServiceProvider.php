@@ -1,6 +1,6 @@
 <?php
 
-namespace Ronmrcdo\Inventory;
+namespace Rcdelfin\Inventory;
 
 use Illuminate\Support\ServiceProvider;
 

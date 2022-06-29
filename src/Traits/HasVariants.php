@@ -1,15 +1,15 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Traits;
+namespace Rcdelfin\Inventory\Traits;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Ronmrcdo\Inventory\Exceptions\InvalidVariantException;
-use Ronmrcdo\Inventory\Exceptions\InvalidAttributeException;
+use Rcdelfin\Inventory\Exceptions\InvalidVariantException;
+use Rcdelfin\Inventory\Exceptions\InvalidAttributeException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Ronmrcdo\Inventory\Models\ProductVariant;
-use Ronmrcdo\Inventory\Models\ProductSku;
+use Rcdelfin\Inventory\Models\ProductVariant;
+use Rcdelfin\Inventory\Models\ProductSku;
 
 trait HasVariants
 {
@@ -113,7 +113,7 @@ trait HasVariants
 	 * variant. To able to assert if the given new variant
 	 * already exist with the current variations
 	 * 
-	 * @param \Ronmrcdo\Inventory\Models\ProductVariant Array<$variants>
+	 * @param \Rcdelfin\Inventory\Models\ProductVariant Array<$variants>
 	 * @return array
 	 */
 	protected function transformVariant($variants): array
@@ -158,7 +158,7 @@ trait HasVariants
 	 * Static function that automatically query for the sku
 	 * 
 	 * @param string $sku
-	 * @return \Ronmrcdo\Inventory\Models\Product
+	 * @return \Rcdelfin\Inventory\Models\Product
 	 */
 	public static function findBySku(string $sku)
 	{
@@ -184,7 +184,7 @@ trait HasVariants
 	 * possible variation
 	 * 
 	 * @param string $code
-	 * @throw \Ronmrcdo\Inventory\Exceptions\InvalidVariantException
+	 * @throw \Rcdelfin\Inventory\Exceptions\InvalidVariantException
 	 * @return void
 	 */
 	public function addSku(string $code, $price = 0.00, $cost = 0.00): void
@@ -207,7 +207,7 @@ trait HasVariants
 	 */
 	public function skus(): HasMany
 	{
-		return $this->hasMany('Ronmrcdo\Inventory\Models\ProductSku');
+		return $this->hasMany('Rcdelfin\Inventory\Models\ProductSku');
 	}
 
 	/**
@@ -217,6 +217,6 @@ trait HasVariants
 	 */
 	public function variations(): HasMany
 	{
-		return $this->hasMany('Ronmrcdo\Inventory\Models\ProductVariant');
+		return $this->hasMany('Rcdelfin\Inventory\Models\ProductVariant');
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Traits;
+namespace Rcdelfin\Inventory\Traits;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -27,6 +27,6 @@ trait HasItemMovements
      */
     public function stock(): BelongsTo
     {
-        return $this->belongsTo('Ronmrcdo\Inventory\Models\InventoryStock', 'stock_id', 'id');
+        return $this->belongsTo('Rcdelfin\Inventory\Models\InventoryStock', 'stock_id', 'id');
     }
 }

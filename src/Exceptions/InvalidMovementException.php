@@ -1,6 +1,6 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Exceptions;
+namespace Rcdelfin\Inventory\Exceptions;
 
 use Exception;
 

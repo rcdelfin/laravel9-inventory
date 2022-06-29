@@ -1,6 +1,6 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Models;
+namespace Rcdelfin\Inventory\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -57,7 +57,7 @@ class ProductSku extends Model
      */
     public function variant(): HasMany
     {
-        return $this->hasMany('Ronmrcdo\Inventory\Models\ProductVariant', 'product_sku_id');
+        return $this->hasMany('Rcdelfin\Inventory\Models\ProductVariant', 'product_sku_id');
     }
 
     /**
@@ -67,6 +67,6 @@ class ProductSku extends Model
      */
     public function stocks(): HasMany
     {
-        return $this->hasMany('Ronmrcdo\Inventory\Models\InventoryStock');
+        return $this->hasMany('Rcdelfin\Inventory\Models\InventoryStock');
     }
 }

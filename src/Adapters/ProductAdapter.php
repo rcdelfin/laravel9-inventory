@@ -1,9 +1,9 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Adapters;
+namespace Rcdelfin\Inventory\Adapters;
 
-use Ronmrcdo\Inventory\Resources\ProductResource;
-use Ronmrcdo\Inventory\Adapters\BaseAdapter;
+use Rcdelfin\Inventory\Resources\ProductResource;
+use Rcdelfin\Inventory\Adapters\BaseAdapter;
 
 class ProductAdapter extends BaseAdapter
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Traits;
+namespace Rcdelfin\Inventory\Traits;
 
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
@@ -30,6 +30,6 @@ trait HasInventory
      */
     public function warehouses(): HasManyThrough
     {
-        return $this->hasManyThrough('Ronmrcdo\Inventory\Models\InventoryStock', 'Ronmrcdo\Inventory\Models\ProductSku')->with('warehouse');
+        return $this->hasManyThrough('Rcdelfin\Inventory\Models\InventoryStock', 'Rcdelfin\Inventory\Models\ProductSku')->with('warehouse');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Traits;
+namespace Rcdelfin\Inventory\Traits;
 
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;

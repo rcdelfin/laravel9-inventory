@@ -1,6 +1,6 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Contracts;
+namespace Rcdelfin\Inventory\Contracts;
 
 interface ResourceContract
 {

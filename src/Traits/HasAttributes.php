@@ -1,10 +1,10 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Traits;
+namespace Rcdelfin\Inventory\Traits;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Ronmrcdo\Inventory\Exceptions\InvalidAttributeException;
+use Rcdelfin\Inventory\Exceptions\InvalidAttributeException;
 
 trait HasAttributes
 {
@@ -12,7 +12,7 @@ trait HasAttributes
 	 * Create a product attribute
 	 * 
 	 * @param array $attributeData
-	 * @throw  \Ronmrcdo\Inventory\Exceptions\InvalidAttributeException
+	 * @throw  \Rcdelfin\Inventory\Exceptions\InvalidAttributeException
 	 * @return $this
 	 */
 	public function addAttribute(string $attribute)
@@ -36,7 +36,7 @@ trait HasAttributes
 	 * Create multiple attributes
 	 * 
 	 * @param mixed $attributes
-	 * @throw  \Ronmrcdo\Inventory\Exceptions\InvalidAttributeException
+	 * @throw  \Rcdelfin\Inventory\Exceptions\InvalidAttributeException
 	 * @return $this
 	 */
 	public function addAttributes($attributes)
@@ -141,9 +141,9 @@ trait HasAttributes
 	 * @param string $option
 	 * @param mixed $value
 	 * 
-	 * @throw \Ronmrcdo\Inventory\Exceptions\InvalidAttributeException
+	 * @throw \Rcdelfin\Inventory\Exceptions\InvalidAttributeException
 	 * 
-	 * @return \Ronmrcdo\Inventory\Models\AttributeValue
+	 * @return \Rcdelfin\Inventory\Models\AttributeValue
 	 */
 	public function addAttributeTerm(string $option, $value)
 	{
@@ -173,6 +173,6 @@ trait HasAttributes
 	 */
 	public function attributes(): HasMany
 	{
-		return $this->hasMany('Ronmrcdo\Inventory\Models\Attribute');
+		return $this->hasMany('Rcdelfin\Inventory\Models\Attribute');
 	}
 }

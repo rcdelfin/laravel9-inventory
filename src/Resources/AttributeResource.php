@@ -1,6 +1,6 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Resources;
+namespace Rcdelfin\Inventory\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 

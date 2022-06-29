@@ -1,13 +1,13 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Models;
+namespace Rcdelfin\Inventory\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Ronmrcdo\Inventory\Traits\Sluggable;
-use Ronmrcdo\Inventory\Traits\HasAttributes;
-use Ronmrcdo\Inventory\Traits\HasVariants;
-use Ronmrcdo\Inventory\Traits\HasCategories;
-use Ronmrcdo\Inventory\Traits\HasInventory;
+use Rcdelfin\Inventory\Traits\Sluggable;
+use Rcdelfin\Inventory\Traits\HasAttributes;
+use Rcdelfin\Inventory\Traits\HasVariants;
+use Rcdelfin\Inventory\Traits\HasCategories;
+use Rcdelfin\Inventory\Traits\HasInventory;
 
 
 class Product extends Model

@@ -1,11 +1,11 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Traits;
+namespace Rcdelfin\Inventory\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use Ronmrcdo\Inventory\Exceptions\NotEnoughStockException;
-use Ronmrcdo\Inventory\Exceptions\InvalidMovementException;
+use Rcdelfin\Inventory\Exceptions\NotEnoughStockException;
+use Rcdelfin\Inventory\Exceptions\InvalidMovementException;
 
 trait HasItemStocks
 {
