@@ -15,6 +15,7 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('product_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->belongsToTenant();
             $table->string('name');
             $table->string('slug')->unique();
             $table->mediumText('description')->nullable();
@@ -22,9 +23,9 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
 
             $table->foreign('parent_id')
-                    ->references('id')
-                    ->on('product_categories')
-                    ->onDelete('cascade');
+                ->references('id')
+                ->on('product_categories')
+                ->onDelete('cascade');
         });
     }
 
