@@ -36,8 +36,8 @@ class CreateProductSkusTable extends Migration
      */
     public function down()
     {
-        Schema::table('product_skus', function (Blueprint $table) {
-            $table->dropForeign(['product_id']);
+        Schema::table('product_variations', function (Blueprint $table) {
+            $table->dropForeign(['product_sku_id']);
         });
 
         Schema::dropIfExists('product_skus');
