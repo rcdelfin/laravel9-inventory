@@ -6,8 +6,8 @@ use Exception;
 
 class InvalidProductException extends Exception
 {
-	public function report()
-	{
-		logger('Invalid Product');
-	}
+    public function report()
+    {
+        logger('Invalid Product');
+    }
 }

@@ -9,14 +9,14 @@ class Warehouse extends Model
 {
     /**
      * Table name in database
-     * 
+     *
      * @var string
      */
     protected $table = 'warehouses';
 
     /**
      * Fields that are mass assignable
-     * 
+     *
      * @var array
      */
     protected $fillable = [
@@ -25,7 +25,7 @@ class Warehouse extends Model
 
     /**
      * Guarded fields
-     * 
+     *
      * @var array
      */
     protected $guarded = [
@@ -34,7 +34,7 @@ class Warehouse extends Model
 
     /**
      * Warehouse has many Items
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function items(): HasMany

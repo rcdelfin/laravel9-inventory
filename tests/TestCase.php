@@ -1,11 +1,11 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Tests;
+namespace Rcdelfin\Inventory\Tests;
 
 use Illuminate\Support\Str;
-use Ronmrcdo\Inventory\Models\Product;
-use Ronmrcdo\Inventory\Models\Attribute;
-use Ronmrcdo\Inventory\ProductServiceProvider;
+use Rcdelfin\Inventory\Models\Product;
+use Rcdelfin\Inventory\Models\Attribute;
+use Rcdelfin\Inventory\ProductServiceProvider;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;

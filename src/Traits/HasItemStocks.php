@@ -9,7 +9,7 @@ use Rcdelfin\Inventory\Exceptions\InvalidMovementException;
 
 trait HasItemStocks
 {
-	/**
+    /**
      * Stores the quantity before an update.
      *
      * @var int|float|string
@@ -28,11 +28,11 @@ trait HasItemStocks
      *
      * @var int|float|string
      */
-	public $cost = 0;
-	
-	protected static function bootHasItemStocks()
-	{
-		static::creating(function (Model $model) {
+    public $cost = 0;
+
+    protected static function bootHasItemStocks()
+    {
+        static::creating(function (Model $model) {
 
             /*
              * Check if a reason has been set, if not
@@ -41,13 +41,13 @@ trait HasItemStocks
             if (!$model->reason) {
                 $model->reason = 'First Item Record; Stock Increase';
             }
-		});
-		
-		static::created(function (Model $model) {
+        });
+
+        static::created(function (Model $model) {
             $model->postCreate();
-		});
-		
-		static::updating(function (Model $model) {
+        });
+
+        static::updating(function (Model $model) {
             /*
              * Retrieve the original quantity before it was updated,
              * so we can create generate an update with it
@@ -60,14 +60,14 @@ trait HasItemStocks
             if (!$model->reason) {
                 $model->reason = 'Stock Adjustment';
             }
-		});
-		
-		static::updated(function (Model $model) {
+        });
+
+        static::updated(function (Model $model) {
             $model->postUpdate();
         });
-	}
+    }
 
-	/**
+    /**
      * Generates a stock movement on the creation of a stock.
      */
     public function postCreate()
@@ -75,17 +75,17 @@ trait HasItemStocks
         if (!$this->getLastMovement()) {
             $this->generateStockMovement(0, $this->quantity, $this->reason, $this->cost);
         }
-	}
-	
-	/**
+    }
+
+    /**
      * Generates a stock movement after a stock is updated.
      */
     public function postUpdate()
     {
         $this->generateStockMovement($this->beforeQuantity, $this->quantity, $this->reason, $this->cost);
-	}
-	
-	/**
+    }
+
+    /**
      * Performs a quantity update. Automatically determining
      * depending on the quantity entered if stock is being taken
      * or added.
@@ -245,7 +245,7 @@ trait HasItemStocks
             return true;
         }
 
-        $message = 'Not enough stock. Tried to take '. $quantity.' but only '. $this->quantity .' is available';
+        $message = 'Not enough stock. Tried to take ' . $quantity . ' but only ' . $this->quantity . ' is available';
 
         throw new NotEnoughStockException($message);
     }
@@ -283,7 +283,7 @@ trait HasItemStocks
         } elseif (is_numeric($movement)) {
             return $this->getMovementById($movement);
         } else {
-            $message = 'Movement '. $movement .' is invalid';
+            $message = 'Movement ' . $movement . ' is invalid';
 
             throw new InvalidMovementException($message);
         }
@@ -455,13 +455,13 @@ trait HasItemStocks
 
         try {
             if ($this->save()) {
-                
+
 
                 $this->fireModelEvent('inventory.stock.moved', [
                     'stock' => $this,
                 ]);
-				
-				DB::commit();
+
+                DB::commit();
                 return $this;
             }
         } catch (\Exception $e) {
@@ -487,7 +487,7 @@ trait HasItemStocks
 
         $this->quantity = $movement->before;
 
-        $reason = 'Rolled back to movement ID: '. $movement->getOriginal('id') .' on '. $movement->getOriginal('created_at');
+        $reason = 'Rolled back to movement ID: ' . $movement->getOriginal('id') . ' on ' . $movement->getOriginal('created_at');
 
         $this->setReason($reason);
 
@@ -624,5 +624,4 @@ trait HasItemStocks
     {
         return true;
     }
-
 }

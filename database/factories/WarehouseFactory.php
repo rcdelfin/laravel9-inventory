@@ -1,6 +1,6 @@
 <?php
 
-use Ronmrcdo\Inventory\Models\Warehouse;
+use Rcdelfin\Inventory\Models\Warehouse;
 use Faker\Generator as Faker;
 
 $factory->define(Warehouse::class, function (Faker $faker) {

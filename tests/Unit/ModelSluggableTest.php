@@ -1,9 +1,9 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Tests\Unit;
+namespace Rcdelfin\Inventory\Tests\Unit;
 
-use Ronmrcdo\Inventory\Models\Category;
-use Ronmrcdo\Inventory\Tests\TestCase;
+use Rcdelfin\Inventory\Models\Category;
+use Rcdelfin\Inventory\Tests\TestCase;
 
 class ModelSluggableTest extends TestCase
 {

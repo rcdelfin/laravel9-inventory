@@ -10,69 +10,69 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Category extends Model
 {
-	use Sluggable, HasProducts;
-	
-	/**
-	 * Category Table
-	 * 
-	 * @var string
-	 */
-	protected $table = 'product_categories';
+    use Sluggable, HasProducts;
 
-	/**
-	 * Fields that are mass assignable
-	 * 
-	 * @var array
-	 */
-	protected $fillable = [
-		'name', 'description', 'parent_id'
-	];
+    /**
+     * Category Table
+     *
+     * @var string
+     */
+    protected $table = 'product_categories';
 
-	/**
-	 * Sluggable attributes
-	 * 
-	 * @var string
-	 */
-	protected $sluggable = 'name';
+    /**
+     * Fields that are mass assignable
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'description', 'parent_id'
+    ];
 
-	/**
-	 * Assert if the Category is Parent
-	 * 
-	 * @return bool
-	 */
-	public function isParent(): bool
-	{
-		return is_null($this->parent_id);
-	}
+    /**
+     * Sluggable attributes
+     *
+     * @var string
+     */
+    protected $sluggable = 'name';
 
-	/**
-	 * Local scope for getting only the parents
-	 * 
-	 * @param  \Illuminate\Database\Eloquent\Builder  $query
-	 * @return \Illuminate\Database\Eloquent\Builder
-	 */
-	public function scopeParentOnly($query)
-	{
-		return $query->whereNull('parent_id');
-	}
+    /**
+     * Assert if the Category is Parent
+     *
+     * @return bool
+     */
+    public function isParent(): bool
+    {
+        return is_null($this->parent_id);
+    }
 
-	/**
-	 * Sub children relationship
-	 * 
-	 * @return \Illuminate\Database\Eloquent\Relations\HasMany $this
-	 */
-	public function children(): HasMany
-	{
-		return $this->hasMany(config('laravel-inventory.category'), 'parent_id', 'id');
-	}
+    /**
+     * Local scope for getting only the parents
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeParentOnly($query)
+    {
+        return $query->whereNull('parent_id');
+    }
 
-	/**
-	 * Parent Relationship
-	 * 
-	 * @return \Illuminate\Database\Eloquent\Relations\HasOne $this
-	 */
-	public function parent(): HasOne
-	{
-		return $this->hasOne(config('laravel-inventory.category'), 'id', 'parent_id');
-	}
+    /**
+     * Sub children relationship
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany $this
+     */
+    public function children(): HasMany
+    {
+        return $this->hasMany(config('laravel-inventory.category'), 'parent_id', 'id');
+    }
+
+    /**
+     * Parent Relationship
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne $this
+     */
+    public function parent(): HasOne
+    {
+        return $this->hasOne(config('laravel-inventory.category'), 'id', 'parent_id');
+    }
 }

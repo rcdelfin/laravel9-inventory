@@ -1,12 +1,12 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Tests\Unit;
+namespace Rcdelfin\Inventory\Tests\Unit;
 
-use Ronmrcdo\Inventory\Models\Product;
-use Ronmrcdo\Inventory\Models\Attribute;
-use Ronmrcdo\Inventory\Models\AttributeValue;
-use Ronmrcdo\Inventory\Exceptions\InvalidAttributeException;
-use Ronmrcdo\Inventory\Tests\TestCase;
+use Rcdelfin\Inventory\Models\Product;
+use Rcdelfin\Inventory\Models\Attribute;
+use Rcdelfin\Inventory\Models\AttributeValue;
+use Rcdelfin\Inventory\Exceptions\InvalidAttributeException;
+use Rcdelfin\Inventory\Tests\TestCase;
 
 class ProductAttributeTest extends TestCase
 {

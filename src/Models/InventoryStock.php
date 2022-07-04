@@ -14,14 +14,14 @@ class InventoryStock extends Model
 
     /**
      * Table name
-     * 
+     *
      * @var string
      */
     protected $table = 'inventory_stocks';
 
     /**
      * Fields that can be mass assigned
-     * 
+     *
      * @var array
      */
     protected $fillable = [
@@ -31,7 +31,7 @@ class InventoryStock extends Model
 
     /**
      * Guarded fields from mass assign
-     * 
+     *
      * @var array
      */
     protected $guarded = [
@@ -40,7 +40,7 @@ class InventoryStock extends Model
 
     /**
      * Local Scope to find item by sku on the inventory
-     * 
+     *
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @param string $sku
      * @return \Illuminate\Database\Eloquent\Builder
@@ -48,13 +48,13 @@ class InventoryStock extends Model
     public function scopeFindItemBySku(Builder $query, string $sku): Builder
     {
         return $query->whereHas('product.code', function ($q) use ($sku) {
-            $q->where('code', 'LIKE', '%'. $sku .'%');
+            $q->where('code', 'LIKE', '%' . $sku . '%');
         });
     }
 
     /**
      * Local scope to find an item based on product name
-     * 
+     *
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @param string $sku
      * @return \Illuminate\Database\Eloquent\Builder
@@ -62,13 +62,13 @@ class InventoryStock extends Model
     public function scopeFindItem(Builder $query, string $product): Builder
     {
         return $query->whereHas('product.product', function ($q) use ($product) {
-            return $q->where('name', 'LIKE', '%'. $product .'%');
+            return $q->where('name', 'LIKE', '%' . $product . '%');
         });
     }
 
     /**
      * Relation to the warehouse
-     * 
+     *
      * @return \lluminate\Database\Eloquent\Relations\BelongsTo
      */
     public function warehouse(): BelongsTo
@@ -78,17 +78,17 @@ class InventoryStock extends Model
 
     /**
      * Relation to the product
-     * 
+     *
      * @return \lluminate\Database\Eloquent\Relations\BelongsTo
      */
     public function product(): BelongsTo
     {
-        return $this->belongsTo('Rcdelfin\Inventory\Models\ProductSku' ,'product_sku_id');
+        return $this->belongsTo('Rcdelfin\Inventory\Models\ProductSku', 'product_sku_id');
     }
 
     /**
      * Relation to the stock Movements
-     * 
+     *
      * @return \lluminate\Database\Eloquent\Relations\HasMany
      */
     public function movements(): HasMany

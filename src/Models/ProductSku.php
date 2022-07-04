@@ -10,21 +10,21 @@ class ProductSku extends Model
 {
     /**
      * Table name of the model
-     * 
+     *
      * @var string
      */
     protected $table = 'product_skus';
 
     /**
      * Disable the timestamp on model creation
-     * 
+     *
      * @var bool
      */
     public $timestamps = false;
 
     /**
      * Fields that can be mass assigned
-     * 
+     *
      * @var array
      */
     protected $fillable = [
@@ -33,7 +33,7 @@ class ProductSku extends Model
 
     /**
      * Fields that are guarded during mass assign
-     * 
+     *
      * @var array
      */
     protected $guarded = [
@@ -42,17 +42,17 @@ class ProductSku extends Model
 
     /**
      * Relation to the product
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function product(): BelongsTo
     {
-         return $this->belongsTo(config('laravel-inventory.product'));
+        return $this->belongsTo(config('laravel-inventory.product'));
     }
 
     /**
      * Product Variant
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function variant(): HasMany
@@ -62,7 +62,7 @@ class ProductSku extends Model
 
     /**
      * Product sku has many stocks
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function stocks(): HasMany

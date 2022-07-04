@@ -16,7 +16,6 @@ class CreateProductSkusTable extends Migration
         Schema::create('product_skus', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('product_id');
-            $table->belongsToTenant();
             $table->string('code')->unique();
             $table->decimal('price', 8, 2)->default(0);
             $table->decimal('cost', 8, 2)->default(0);

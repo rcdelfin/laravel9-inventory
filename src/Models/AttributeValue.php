@@ -10,21 +10,21 @@ class AttributeValue extends Model
 {
     /**
      * Table name of the attribute values
-     * 
+     *
      * @var string
      */
     protected $table = 'product_attribute_values';
 
     /**
      * Disable the timestamp on model creation
-     * 
+     *
      * @var bool
      */
     public $timestamps = false;
 
     /**
-     * Fields that are mass assignable 
-     * 
+     * Fields that are mass assignable
+     *
      * @var array
      */
     protected $fillable = [
@@ -33,7 +33,7 @@ class AttributeValue extends Model
 
     /**
      * Fields that can't be assigned
-     * 
+     *
      * @var array
      */
     protected $guarded = [
@@ -42,7 +42,7 @@ class AttributeValue extends Model
 
     /**
      * Product Relationship
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo $this
      */
     public function attribute(): BelongsTo
@@ -52,7 +52,7 @@ class AttributeValue extends Model
 
     /**
      * Relation of the attribute option to the variant
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany $this
      */
     public function variations(): HasMany

@@ -9,21 +9,21 @@ class ProductVariant extends Model
 {
     /**
      * Table name of the model
-     * 
+     *
      * @var string
      */
     protected $table = 'product_variations';
 
     /**
      * Disable timestamp
-     * 
+     *
      * @var bool
      */
     public $timestamps = false;
 
     /**
      * Fields that can be mass assigned
-     * 
+     *
      * @var array
      */
     protected $fillable = [
@@ -33,7 +33,7 @@ class ProductVariant extends Model
 
     /**
      * Protected fields during mass assigned
-     * 
+     *
      * @var array
      */
     protected $guarded = [
@@ -42,17 +42,17 @@ class ProductVariant extends Model
 
     /**
      * Relation of the variation to the product sku
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function productSku(): BelongsTo
-	{
-		return $this->belongsTo('Rcdelfin\Inventory\Models\ProductSku', 'product_sku_id');
-	}
-    
+    {
+        return $this->belongsTo('Rcdelfin\Inventory\Models\ProductSku', 'product_sku_id');
+    }
+
     /**
      * Relation of the variation to the product
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function product(): BelongsTo
@@ -62,7 +62,7 @@ class ProductVariant extends Model
 
     /**
      * Relation of the variation product to the attribute
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function attribute(): BelongsTo
@@ -72,7 +72,7 @@ class ProductVariant extends Model
 
     /**
      * Relation of the variation product to the attribute option
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function option(): BelongsTo

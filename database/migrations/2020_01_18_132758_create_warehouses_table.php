@@ -15,7 +15,7 @@ class CreateWarehousesTable extends Migration
     {
         Schema::create('warehouses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->belongsToTenant();
+            $table->string('tenant_id')->nullable()->index();
             $table->string('name');
             $table->mediumText('description');
             $table->timestamps();

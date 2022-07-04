@@ -12,14 +12,14 @@ class InventoryStockMovement extends Model
 
     /**
      * Table name
-     * 
+     *
      * @var string
      */
     protected $table = 'inventory_stock_movements';
 
     /**
      * Fields that can be mass assigned
-     * 
+     *
      * @var arary
      */
     protected $fillable = [
@@ -29,7 +29,7 @@ class InventoryStockMovement extends Model
 
     /**
      * Guarded fields that can't be mass assign
-     * 
+     *
      * @var array
      */
     protected $guarded = [

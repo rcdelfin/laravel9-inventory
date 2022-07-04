@@ -8,171 +8,171 @@ use Rcdelfin\Inventory\Exceptions\InvalidAttributeException;
 
 trait HasAttributes
 {
-	/**
-	 * Create a product attribute
-	 * 
-	 * @param array $attributeData
-	 * @throw  \Rcdelfin\Inventory\Exceptions\InvalidAttributeException
-	 * @return $this
-	 */
-	public function addAttribute(string $attribute)
-	{
-		DB::beginTransaction();
+    /**
+     * Create a product attribute
+     *
+     * @param array $attributeData
+     * @throw  \Rcdelfin\Inventory\Exceptions\InvalidAttributeException
+     * @return $this
+     */
+    public function addAttribute(string $attribute)
+    {
+        DB::beginTransaction();
 
-		try {
-			$this->attributes()->create(['name' => $attribute]);
+        try {
+            $this->attributes()->create(['name' => $attribute]);
 
-			DB::commit();
-		} catch (\Throwable $err) { // No matter what error will occur we should throw invalidAttribute
-			DB::rollBack();
+            DB::commit();
+        } catch (\Throwable $err) { // No matter what error will occur we should throw invalidAttribute
+            DB::rollBack();
 
-			throw new InvalidAttributeException($err->getMessage(), 422);
-		}
+            throw new InvalidAttributeException($err->getMessage(), 422);
+        }
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Create multiple attributes
-	 * 
-	 * @param mixed $attributes
-	 * @throw  \Rcdelfin\Inventory\Exceptions\InvalidAttributeException
-	 * @return $this
-	 */
-	public function addAttributes($attributes)
-	{
-		DB::beginTransaction();
+    /**
+     * Create multiple attributes
+     *
+     * @param mixed $attributes
+     * @throw  \Rcdelfin\Inventory\Exceptions\InvalidAttributeException
+     * @return $this
+     */
+    public function addAttributes($attributes)
+    {
+        DB::beginTransaction();
 
-		try {
-			$this->attributes()->createMany($attributes);
+        try {
+            $this->attributes()->createMany($attributes);
 
-			DB::commit();
-		} catch (\Throwable $err) { // No matter what error will occur we should throw invalidAttribute
-			DB::rollBack();
+            DB::commit();
+        } catch (\Throwable $err) { // No matter what error will occur we should throw invalidAttribute
+            DB::rollBack();
 
-			throw new InvalidAttributeException($err->getMessage(), 422);
-		}
+            throw new InvalidAttributeException($err->getMessage(), 422);
+        }
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * It should remove attribute from product
-	 * 
-	 * @param string $key
-	 * @return self
-	 */
-	public function removeAttribute($attr)
-	{
-		DB::beginTransaction();
+    /**
+     * It should remove attribute from product
+     *
+     * @param string $key
+     * @return self
+     */
+    public function removeAttribute($attr)
+    {
+        DB::beginTransaction();
 
-		try {
-			$attribute = $this->attributes()->where('name', $attr)->firstOrFail();
+        try {
+            $attribute = $this->attributes()->where('name', $attr)->firstOrFail();
 
-			$attribute->delete();
+            $attribute->delete();
 
-			DB::commit();
-		} catch (\Throwable $err) { // No matter what error will occur we should throw invalidAttribute
-			DB::rollBack();
+            DB::commit();
+        } catch (\Throwable $err) { // No matter what error will occur we should throw invalidAttribute
+            DB::rollBack();
 
-			throw new InvalidAttributeException($err->getMessage(), 422);
-		}
+            throw new InvalidAttributeException($err->getMessage(), 422);
+        }
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * It should remove attribute from product
-	 * 
-	 * @param string $key
-	 * @return self
-	 */
-	public function removeAttributeTerm(string $attribute, string $term)
-	{
-		DB::beginTransaction();
+    /**
+     * It should remove attribute from product
+     *
+     * @param string $key
+     * @return self
+     */
+    public function removeAttributeTerm(string $attribute, string $term)
+    {
+        DB::beginTransaction();
 
-		try {
-			$attribute = $this->attributes()->where('name', $attribute)->firstOrFail();
+        try {
+            $attribute = $this->attributes()->where('name', $attribute)->firstOrFail();
 
-			$attribute->removeValue($term);
+            $attribute->removeValue($term);
 
-			DB::commit();
-		} catch (\Throwable $err) { // No matter what error will occur we should throw invalidAttribute
-			DB::rollBack();
+            DB::commit();
+        } catch (\Throwable $err) { // No matter what error will occur we should throw invalidAttribute
+            DB::rollBack();
 
-			throw new InvalidAttributeException($err->getMessage(), 422);
-		}
+            throw new InvalidAttributeException($err->getMessage(), 422);
+        }
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Assert if the Product has attributes
-	 * 
-	 * @return bool
-	 */
-	public function hasAttributes(): bool
-	{
-		return !! $this->attributes()->count();
-	}
+    /**
+     * Assert if the Product has attributes
+     *
+     * @return bool
+     */
+    public function hasAttributes(): bool
+    {
+        return !!$this->attributes()->count();
+    }
 
-	/**
-	 * Assert if the product has this attributes
-	 * 
-	 * @param string|int $key
-	 * 
-	 * @return bool
-	 */
-	public function hasAttribute($key): bool
-	{
-		// If the arg is a numeric use the id else use the name
-		if (is_numeric($key)) {
-			return $this->attributes()->where('id', $key)->exists();
-		} elseif (is_string($key)) {
-			return $this->attributes()->where('name', $key)->exists();
-		}
+    /**
+     * Assert if the product has this attributes
+     *
+     * @param string|int $key
+     *
+     * @return bool
+     */
+    public function hasAttribute($key): bool
+    {
+        // If the arg is a numeric use the id else use the name
+        if (is_numeric($key)) {
+            return $this->attributes()->where('id', $key)->exists();
+        } elseif (is_string($key)) {
+            return $this->attributes()->where('name', $key)->exists();
+        }
 
-		return false;
-	}
+        return false;
+    }
 
-	/**
-	 * Add Option Value on the attribute
-	 * 
-	 * @param string $option
-	 * @param mixed $value
-	 * 
-	 * @throw \Rcdelfin\Inventory\Exceptions\InvalidAttributeException
-	 * 
-	 * @return \Rcdelfin\Inventory\Models\AttributeValue
-	 */
-	public function addAttributeTerm(string $option, $value)
-	{
-		$attribute = $this->attributes()->where('name', $option)->first();
+    /**
+     * Add Option Value on the attribute
+     *
+     * @param string $option
+     * @param mixed $value
+     *
+     * @throw \Rcdelfin\Inventory\Exceptions\InvalidAttributeException
+     *
+     * @return \Rcdelfin\Inventory\Models\AttributeValue
+     */
+    public function addAttributeTerm(string $option, $value)
+    {
+        $attribute = $this->attributes()->where('name', $option)->first();
 
-		if (! $attribute) {
-			throw new InvalidAttributeException("Invalid attribute", 422);
-		}
+        if (!$attribute) {
+            throw new InvalidAttributeException("Invalid attribute", 422);
+        }
 
-		return $attribute->addValue($value);
-	}
+        return $attribute->addValue($value);
+    }
 
-	/**
-	 * Get Product Attributes
-	 * 
-	 * 
-	 */
-	public function loadAttributes()
-	{
-		return $this->attributes()->get()->load('values');
-	}
+    /**
+     * Get Product Attributes
+     *
+     *
+     */
+    public function loadAttributes()
+    {
+        return $this->attributes()->get()->load('values');
+    }
 
-	/**
-	 * Relation on Attribute Model
-	 * 
-	 * @return \Illuminate\Database\Eloquent\Relations\HasMany $this
-	 */
-	public function attributes(): HasMany
-	{
-		return $this->hasMany('Rcdelfin\Inventory\Models\Attribute');
-	}
+    /**
+     * Relation on Attribute Model
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany $this
+     */
+    public function attributes(): HasMany
+    {
+        return $this->hasMany('Rcdelfin\Inventory\Models\Attribute');
+    }
 }

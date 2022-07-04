@@ -2,12 +2,12 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use Ronmrcdo\Inventory\Models\Product;
-use Ronmrcdo\Inventory\Models\Category;
-use Ronmrcdo\Inventory\Models\Attribute;
-use Ronmrcdo\Inventory\Models\AttributeValue;
-use Ronmrcdo\Inventory\Models\ProductSku;
-use Ronmrcdo\Inventory\Models\ProductVariant;
+use Rcdelfin\Inventory\Models\Product;
+use Rcdelfin\Inventory\Models\Category;
+use Rcdelfin\Inventory\Models\Attribute;
+use Rcdelfin\Inventory\Models\AttributeValue;
+use Rcdelfin\Inventory\Models\ProductSku;
+use Rcdelfin\Inventory\Models\ProductVariant;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 

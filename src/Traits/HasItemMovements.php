@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 trait HasItemMovements
 {
-	/**
+    /**
      * Rolls back the current movement.
      *
      * @param bool $recursive
@@ -18,11 +18,11 @@ trait HasItemMovements
         $stock = $this->stock;
 
         return $stock->rollback($this, $recursive);
-	}
+    }
 
-	/**
+    /**
      * Stock relation
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function stock(): BelongsTo

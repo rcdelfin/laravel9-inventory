@@ -1,14 +1,14 @@
 <?php
 
-namespace Ronmrcdo\Inventory\Tests\Unit;
+namespace Rcdelfin\Inventory\Tests\Unit;
 
 use Illuminate\Support\Str;
-use Ronmrcdo\Inventory\Models\Product;
-use Ronmrcdo\Inventory\Models\Attribute;
-use Ronmrcdo\Inventory\Adapters\ProductAdapter;
-use Ronmrcdo\Inventory\Adapters\ProductVariantAdapter;
-use Ronmrcdo\Inventory\Exceptions\InvalidVariantException;
-use Ronmrcdo\Inventory\Tests\TestCase;
+use Rcdelfin\Inventory\Models\Product;
+use Rcdelfin\Inventory\Models\Attribute;
+use Rcdelfin\Inventory\Adapters\ProductAdapter;
+use Rcdelfin\Inventory\Adapters\ProductVariantAdapter;
+use Rcdelfin\Inventory\Exceptions\InvalidVariantException;
+use Rcdelfin\Inventory\Tests\TestCase;
 
 class ProductVariationTest extends TestCase
 {

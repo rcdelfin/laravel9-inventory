@@ -18,10 +18,10 @@ class ProductResource extends JsonResource
     {
         return [
             'id' => $this->id,
-			'name' => $this->name,
+            'name' => $this->name,
             'slug' => $this->slug,
             'sku' => $this->hasSku() ? $this->skus()->first()->code : null,
-			'short_description' => $this->short_description,
+            'short_description' => $this->short_description,
             'description' => $this->description,
             'price' => $this->hasSku() ? number_format($this->skus()->first()->price, 2, '.', '') : 0.00,
             'cost' => $this->hasSku() ? number_format($this->skus()->first()->price, 2, '.', '') : 0.00,
@@ -31,7 +31,8 @@ class ProductResource extends JsonResource
                 'name' => $this->category->name
             ],
             'attributes' => AttributeResource::collection($this->attributes)->toArray(app('request')),
-            'variations' => $this->when($this->hasAttributes() && $this->hasSku(), 
+            'variations' => $this->when(
+                $this->hasAttributes() && $this->hasSku(),
                 VariantResource::collection($this->skus)->toArray(app('request'))
             )
         ];

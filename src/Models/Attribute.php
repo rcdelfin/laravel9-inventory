@@ -10,21 +10,21 @@ class Attribute extends Model
 {
     /**
      * Table name of the model
-     * 
+     *
      * @var string
      */
     protected $table = 'product_attributes';
 
     /**
      * Disable the timestamp on model creation
-     * 
+     *
      * @var bool
      */
     public $timestamps = false;
 
     /**
      * Fields that are mass assignable
-     * 
+     *
      * @var array
      */
     protected $fillable = [
@@ -33,7 +33,7 @@ class Attribute extends Model
 
     /**
      * Fields that can't be assign
-     * 
+     *
      * @var array
      */
     protected $guarded = [
@@ -42,7 +42,7 @@ class Attribute extends Model
 
     /**
      * Add Value on the attribute
-     * 
+     *
      * @param string|array $value
      */
     public function addValue($value)
@@ -51,8 +51,8 @@ class Attribute extends Model
             $terms = collect($value)->map(function ($term) {
                 return ['value' => $term];
             })
-            ->values()
-            ->toArray();
+                ->values()
+                ->toArray();
 
             return $this->values()->createMany($terms);
         }
@@ -61,7 +61,7 @@ class Attribute extends Model
 
     /**
      * Remove a term on an attribute
-     * 
+     *
      * @param string $term
      */
     public function removeValue($term)
@@ -71,7 +71,7 @@ class Attribute extends Model
 
     /**
      * Relation of the attribute to the product
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo $this
      */
     public function product(): BelongsTo
@@ -81,7 +81,7 @@ class Attribute extends Model
 
     /**
      * Relation to the values
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany $this
      */
     public function values(): HasMany

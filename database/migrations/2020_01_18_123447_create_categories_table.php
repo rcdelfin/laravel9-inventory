@@ -15,7 +15,7 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('product_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->belongsToTenant();
+            $table->string('tenant_id')->nullable()->index();
             $table->string('name');
             $table->string('slug')->unique();
             $table->mediumText('description')->nullable();
