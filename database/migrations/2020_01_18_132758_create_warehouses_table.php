@@ -17,7 +17,7 @@ class CreateWarehousesTable extends Migration
             $table->bigIncrements('id');
             $table->string('tenant_id')->nullable()->index();
             $table->string('name');
-            $table->mediumText('description');
+            $table->mediumText('description')->nullable();
             $table->timestamps();
         });
     }
