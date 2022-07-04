@@ -34,7 +34,7 @@ class CreateProductVariantsTable extends Migration
                 ->references('id')
                 ->on('product_attributes')
                 ->onDelete('cascade');
-            
+
             $table->foreign('product_attribute_value_id')
                 ->references('id')
                 ->on('product_attribute_values')
@@ -52,6 +52,6 @@ class CreateProductVariantsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_variants');
+        Schema::dropIfExists('product_variations');
     }
 }

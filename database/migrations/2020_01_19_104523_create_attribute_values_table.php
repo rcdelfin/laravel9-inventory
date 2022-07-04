@@ -32,11 +32,6 @@ class CreateAttributeValuesTable extends Migration
      */
     public function down()
     {
-        Schema::table('product_variations', function (Blueprint $table) {
-            $table->dropForeign(['product_attribute_id']);
-            $table->dropForeign(['product_attribute_value_id']);
-        });
-
         Schema::table('product_attribute_values', function (Blueprint $table) {
             $table->dropForeign(['product_attribute_id']);
         });
