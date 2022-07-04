@@ -1,6 +1,6 @@
 {
     "name": "rcdelfin/inventory",
-    "description": "An Inventory Management Package for products",
+    "description": "An Inventory Management Package for products, (Laravel 9, php8.0 & php8.1)",
     "type": "package",
     "license": "MIT",
     "authors": [
