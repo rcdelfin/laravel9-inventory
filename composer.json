@@ -14,7 +14,7 @@
         "Product",
         "Laravel"
     ],
-    "homepage": "https://github.com/rcdelfin/inventory",
+    "homepage": "https://github.com/rcdelfin/laravel9-inventory",
     "require": {
         "php": "^8.0|^8.1",
         "stancl/tenancy": "^3.5"
