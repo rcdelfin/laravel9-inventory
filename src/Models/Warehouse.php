@@ -29,7 +29,7 @@ class Warehouse extends Model
      * @var array
      */
     protected $guarded = [
-        'id', 'created_at', 'updated_at'
+        'id', 'tenant_id', 'created_at', 'updated_at'
     ];
 
     /**

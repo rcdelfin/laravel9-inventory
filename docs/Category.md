@@ -3,7 +3,7 @@
 Creating a category
 
 ```php
-use Ronmrcdo\Inventory\Models\Category;
+use Rcdelfin\Inventory\Models\Category;
 
 Category::create([
     'name' => 'test-category',
@@ -15,7 +15,7 @@ Category::create([
 Creating a category and sub category
 
 ```php
-use Ronmrcdo\Inventory\Models\Category;
+use Rcdelfin\Inventory\Models\Category;
 
 $parent = Category::create([
     'name' => 'Test-Parent',

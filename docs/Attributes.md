@@ -30,6 +30,7 @@ Terms are the values of attribute e.g for size (attribute) - small, medium, larg
  * @param array[String] $terms
  **/
 $product->addAttributeTerm('size', ['small', 'medium', 'large']);
+$product->addAttributeTerm('color', ['black', 'red', 'white']);
 ```
 
 ### Removing Product Attribute and Terms

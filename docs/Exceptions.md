@@ -6,7 +6,7 @@ Here are the list of exceptions
 
 ```php
 
-use Ronmrcdo\Inventory\Exceptions\InvalidAttributeException;
+use Rcdelfin\Inventory\Exceptions\InvalidAttributeException;
 
 if ($err instanceof InvalidAttributeException) {
     // error

@@ -4,7 +4,7 @@ In this example we will show you on how to create a product that doesn't have a 
 
 ```php
 use Illuminate\Support\Facades\DB;
-use Ronmrcdo\Inventory\Models\Product;
+use Rcdelfin\Inventory\Models\Product;
 
 ...
 
@@ -73,7 +73,7 @@ then in your Product model class
 
 namespace Your\Namespace;
 
-use Ronmrcdo\Inventory\Models\Product as BaseProduct;
+use Rcdelfin\Inventory\Models\Product as BaseProduct;
 
 class Product extends BaseProduct
 {

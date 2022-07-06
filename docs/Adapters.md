@@ -5,8 +5,8 @@ Using adapters to transform it into array with similar structure from woocommerc
 ## Product Adapter
 
 ```php
-use Ronmrcdo\Inventory\Models\Product;
-use Ronmrcdo\Inventory\Adapters\ProductAdapter;
+use Rcdelfin\Inventory\Models\Product;
+use Rcdelfin\Inventory\Adapters\ProductAdapter;
 
 $product = Product::create([
     'name' => 'Test Product',
@@ -139,8 +139,8 @@ Output
 using the ProductAdapter as ```collection```
 
 ```php
-use Ronmrcdo\Inventory\Models\Product;
-use Ronmrcdo\Inventory\Adapters\ProductAdapter;
+use Rcdelfin\Inventory\Models\Product;
+use Rcdelfin\Inventory\Adapters\ProductAdapter;
 
 $product = Product::all();
 
@@ -153,7 +153,7 @@ return $productResourceCollection;
 ## Product Variant Adapter
 
 ```php
-use Ronmrcdo\Inventory\Adapters\ProductVariantAdapter;
+use Rcdelfin\Inventory\Adapters\ProductVariantAdapter;
 
 $variantResource = ProductVariantAdapter::collection($product->getVariations());
 
@@ -166,7 +166,7 @@ return $variantResource;
 ProductVariantAdapter only transform the product variation into array similar to the above functionality.
 
 ```php
-use Ronmrcdo\Inventory\Adapters\ProductVariantAdapter;
+use Rcdelfin\Inventory\Adapters\ProductVariantAdapter;
 
 $variantResource = new ProductVariantAdapter($product->findBySku('TSHIRT-SMBLK'))
 
@@ -204,7 +204,7 @@ It will return an array format like this
 Using collection to list all the product variation and convert them into array format
 
 ```php
-use Ronmrcdo\Inventory\Adapters\ProductVariantAdapter;
+use Rcdelfin\Inventory\Adapters\ProductVariantAdapter;
 
 $variations = $product->getVariations();
 $variantResource = ProductVariantAdapter::collection($variations);
@@ -273,7 +273,7 @@ and use the BaseAdapter
 
 namespace Your\Namespace;
 
-use Ronmrcdo\Inventory\Adapters\BaseAdapter;
+use Rcdelfin\Inventory\Adapters\BaseAdapter;
 use Your\Namespace\Resources\ProductResource;
 
 class ProductAdapter extends BaseAdapter
