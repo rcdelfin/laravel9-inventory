@@ -6,18 +6,20 @@
 
 
 ## Description
-Laravel Inventory provides the basic of inventory management. This package is based from the <a href="https://github.com/mauricecalhoun/inventory">stevebauman/inventory</a> and provides product variation using attributes and terms and have a similar structure of product format of woocommerce.
+Laravel Inventory provides the basic of inventory management. 
+* This package is based from the <a href="https://github.com/mauricecalhoun/inventory">stevebauman/inventory</a> and provides product variation using attributes and terms and have a similar structure of product format of woocommerce.
+* <a href="https://github.com/ronmrcdo/laravel-inventory">ronmrcdo/laravel-inventory</a>
 
 ## Requirements
-* Laravel 6.0
-* PHP ^7.2
+* Laravel 9
+* PHP ^8.0
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require ronmrcdo/inventory
+composer require rcdelfin/inventory
 ```
 
 ## Usage
@@ -32,9 +34,4 @@ composer require ronmrcdo/inventory
 </ul>
 
 ## Versions
-
-<ul>
-    <li><a href="https://github.com/ronmrcdo/laravel-inventory/releases/tag/v0.1.2-beta">0.1.2-beta</a></li>
-    <li><a href="https://github.com/ronmrcdo/laravel-inventory/releases/tag/v0.1.1-beta">0.1.1-beta</a></li>
-</ul>
 
